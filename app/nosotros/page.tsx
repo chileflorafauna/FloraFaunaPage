@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import WorkCarousel from '@/components/work-carousel';
+import { withBasePath } from '@/lib/base-path';
 
 export const metadata: Metadata = {
     title: 'Sobre Nosotros',
@@ -39,7 +40,7 @@ export default function AboutPage() {
                     </div>
                     <div className="relative">
                         <div className="aspect-square rounded-3xl overflow-hidden shadow-2xl">
-                            <div className="w-full h-full bg-cover bg-center" style={{backgroundImage: "url('./members/GrupoFF.jpg')"}}></div>
+                            <div className="w-full h-full bg-cover bg-center" style={{ backgroundImage: `url('${withBasePath('/members/GrupoFF.jpg')}')` }}></div>
                         </div>
                         <div className="absolute -bottom-8 -left-8 bg-white p-6 rounded-2xl shadow-xl border border-slate-100 hidden md:block max-w-xs">
                             <p className="text-[#16a34a] font-bold text-lg mb-1">Impacto Positivo</p>
@@ -85,7 +86,7 @@ export default function AboutPage() {
 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
 <div className="group">
 <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
-<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{backgroundImage: "url('./members/PDauelsberg.jpeg')"}}></div>
+<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: `url('${withBasePath('/members/PDauelsberg.jpeg')}')` }}></div>
 <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 <h4 className="text-xl font-bold text-[#1e293b]">Patricia Dauelsberg</h4>
@@ -94,7 +95,7 @@ export default function AboutPage() {
 </div>
 <div className="group">
 <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
-<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{backgroundImage: "url('./members/JLeyton.jpg')"}}></div>
+<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: `url('${withBasePath('/members/JLeyton.jpg')}')` }}></div>
 <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 <h4 className="text-xl font-bold text-[#1e293b]">Javiera Leyton</h4>
@@ -103,7 +104,7 @@ export default function AboutPage() {
 </div>
 <div className="group">
 <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
-<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{backgroundImage: "url('./members/EEwok.jpg')"}}></div>
+<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: `url('${withBasePath('/members/EEwok.jpg')}')` }}></div>
 <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 <h4 className="text-xl font-bold text-[#1e293b]">Elías Encina</h4>
@@ -112,7 +113,7 @@ export default function AboutPage() {
 </div>
 <div className="group">
 <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
-<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{backgroundImage: "url('./members/UUnnamed.jpg')"}}></div>
+<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: `url('${withBasePath('/members/UUnnamed.jpg')}')` }}></div>
 <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 <h4 className="text-xl font-bold text-[#1e293b]">Felipe Góngora</h4>
@@ -121,7 +122,7 @@ export default function AboutPage() {
 </div>
 <div className="group">
 <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
-<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{backgroundImage: "url('./members/EFuentes.jpg')"}}></div>
+<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: `url('${withBasePath('/members/EFuentes.jpg')}')` }}></div>
 <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 <h4 className="text-xl font-bold text-[#1e293b]">Emilia Fuentes</h4>
@@ -130,7 +131,7 @@ export default function AboutPage() {
 </div>
 <div className="group">
 <div className="aspect-[3/4] rounded-2xl overflow-hidden mb-6 relative">
-<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{backgroundImage: "url('./members/RodrigoMeneses.jpg')"}}></div>
+<div className="w-full h-full bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style={{ backgroundImage: `url('${withBasePath('/members/RodrigoMeneses.jpg')}')` }}></div>
 <div className="absolute inset-0 bg-gradient-to-t from-[#1e293b]/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 </div>
 <h4 className="text-xl font-bold text-[#1e293b]">Rodrigo Meneses</h4>

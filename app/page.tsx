@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import ProjectsMapLoader from "../components/ProjectsMapLoader";
+import { withBasePath } from "@/lib/base-path";
 
 export const metadata: Metadata = {
   title: "Consultora Ambiental en Chile",
@@ -148,42 +149,42 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-12">
         <div className="flex flex-col items-center">
         <div className="size-44 rounded-full border border-slate-100 p-2 mb-8 shadow-sm">
-        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{backgroundImage: "url('./members/PDauelsberg.jpeg')"}}></div>
+        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{ backgroundImage: `url('${withBasePath('/members/PDauelsberg.jpeg')}')` }}></div>
         </div>
         <h4 className="text-lg font-bold text-[#1e293b]">Patricia Dauelsberg</h4>
         <p className="text-[#16a34a] text-sm font-semibold uppercase tracking-wider mt-1">Directora de Proyectos</p>
         </div>
         <div className="flex flex-col items-center">
         <div className="size-44 rounded-full border border-slate-100 p-2 mb-8 shadow-sm">
-        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{backgroundImage: "url('./members/JLeyton.jpg')"}}></div>
+        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{ backgroundImage: `url('${withBasePath('/members/JLeyton.jpg')}')` }}></div>
         </div>
         <h4 className="text-lg font-bold text-[#1e293b]">Javiera Leyton</h4>
         <p className="text-[#16a34a] text-sm font-semibold uppercase tracking-wider mt-1">Coordinación y Jefatura de Proyectos</p>
         </div>
         <div className="flex flex-col items-center">
         <div className="size-44 rounded-full border border-slate-100 p-2 mb-8 shadow-sm">
-        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{backgroundImage: "url('./members/EEwok.jpg')"}}></div>
+        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{ backgroundImage: `url('${withBasePath('/members/EEwok.jpg')}')` }}></div>
         </div>
         <h4 className="text-lg font-bold text-[#1e293b]">Elías Encina</h4>
         <p className="text-[#16a34a] text-sm font-semibold uppercase tracking-wider mt-1">Encargado de Campañas</p>
         </div>
         <div className="flex flex-col items-center">
         <div className="size-44 rounded-full border border-slate-100 p-2 mb-8 shadow-sm">
-        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{backgroundImage: "url('./members/UUnnamed.jpg')"}}></div>
+        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{ backgroundImage: `url('${withBasePath('/members/UUnnamed.jpg')}')` }}></div>
         </div>
         <h4 className="text-lg font-bold text-[#1e293b]">Felipe Góngora</h4>
         <p className="text-[#16a34a] text-sm font-semibold uppercase tracking-wider mt-1">Ayudante de Campañas</p>
         </div>
         <div className="flex flex-col items-center">
         <div className="size-44 rounded-full border border-slate-100 p-2 mb-8 shadow-sm">
-        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{backgroundImage: "url('./members/EFuentes.jpg')"}}></div>
+        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{ backgroundImage: `url('${withBasePath('/members/EFuentes.jpg')}')` }}></div>
         </div>
         <h4 className="text-lg font-bold text-[#1e293b]">Emilia Fuentes</h4>
         <p className="text-[#16a34a] text-sm font-semibold uppercase tracking-wider mt-1">Especialista Flora, Vegetación y Artrópodos</p>
         </div>
         <div className="flex flex-col items-center">
         <div className="size-44 rounded-full border border-slate-100 p-2 mb-8 shadow-sm">
-        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{backgroundImage: "url('./members/RodrigoMeneses.jpg')"}}></div>
+        <div className="w-full h-full rounded-full bg-cover bg-center grayscale hover:grayscale-0 transition-all duration-500" style={{ backgroundImage: `url('${withBasePath('/members/RodrigoMeneses.jpg')}')` }}></div>
         </div>
         <h4 className="text-lg font-bold text-[#1e293b]">Rodrigo Meneses</h4>
         <p className="text-[#16a34a] text-sm font-semibold uppercase tracking-wider mt-1">Encargado de Modelación de Sistemas</p>

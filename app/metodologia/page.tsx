@@ -1,26 +1,27 @@
 ﻿import type { Metadata } from 'next';
 import MethodologyCard from '@/components/MethodologyCard';
 import Link from "next/link";
+import { withBasePath } from '@/lib/base-path';
 
 const methodologies = [
   {
     title: 'Avifauna',
     icon: 'flutter_dash',
-    image: "url('./fauna/fauna5.jpg')",
+    image: `url('${withBasePath('/fauna/fauna5.jpg')}')`,
     fieldMethodology: 'Puntos de conteo de radio fijo y transectos lineales en periodos de máxima actividad reproductiva y migratoria. Registro visual y auditivo estandarizado, considerando estacionalidad y esfuerzo de muestreo acorde a requerimientos del SEIA.',
     bibliographicAnalysis: 'Revisión sistemática en bases de datos (eBird, GBIF) y literatura científica actualizada. Evaluación de estados de conservación (RCE), rutas migratorias, uso de hábitat y sensibilidad frente a intervención del proyecto. Así como también datos complementarios de ciencia ciudadana.'
   },
   {
     title: 'Anfibios',
     icon: 'water_drop',
-    image: "url('./flora/misc/misc3.JPG')",
+    image: `url('${withBasePath('/flora/misc/misc3.JPG')}')`,
     fieldMethodology: 'Búsqueda activa por encuentro visual (VES) en cuerpos de agua, vegas y microhábitats asociados. Muestreos nocturnos con identificación auditiva de coros reproductivos y registro de condiciones ambientales.',
     bibliographicAnalysis: 'Evaluación de estados de conservación (RCE), identificación de microhábitats críticos, análisis de conectividad y susceptibilidad a alteración hidrológica o pérdida de hábitat.'
   },
   {
     title: 'Reptiles',
     icon: 'grass',
-    image: "url('./fauna/fauna13.jpg')",
+    image: `url('${withBasePath('/fauna/fauna13.jpg')}')`,
     fieldMethodology: 'Transectos de inspección visual en horarios de máxima actividad térmica. Revisión sistemática de refugios potenciales y captura manual selectiva cuando corresponde. Registro georreferenciado de individuos y microhábitats.',
     bibliographicAnalysis: 'Evaluación de endemismo, distribución altitudinal y uso de hábitat. Identificación de áreas críticas para planes de rescate y relocalización y análisis de vulnerabilidad frente a fragmentación.'
   },
@@ -34,7 +35,7 @@ const methodologies = [
   {
     title: 'Flora y Vegetación',
     icon: 'forest',
-    image: "url('./flora/flor/flor1.jpg')",
+    image: `url('${withBasePath('/flora/flor/flor1.jpg')}')`,
     fieldMethodology: 'Levantamiento florístico mediante parcelas y transectos de muestreo representativos de las unidades vegetacionales (arbórea, arbustiva y herbácea) presentes en el área de estudio. Identificación in situ y colecta botánica cuando corresponde, con georreferenciación de individuos y delimitación cartográfica de formaciones vegetacionales. Caracterización estructural y composicional de comunidades vegetales, incluyendo cobertura y abundancia.',
     bibliographicAnalysis: 'Identificación taxonómica mediante análisis morfológico y microscópico. Evaluación de riqueza y composición de comunidades, identificación de especies sensibles y análisis como bioindicadores de calidad ambiental. Determinación de sensibilidad frente a remoción de sustrato, emisión de material particulado o alteración microclimática.'
   },
@@ -48,14 +49,14 @@ const methodologies = [
   {
     title: 'Hongos y Reino Fungi',
     icon: 'compost',
-    image: "url('./flora/hongo/hongo2.jpg')",
+    image: `url('${withBasePath('/flora/hongo/hongo2.jpg')}')`,
     fieldMethodology: 'Prospección dirigida de macrohongos mediante recorridos sistemáticos en microhábitats representativos. Registro fotográfico, georreferenciación y colecta controlada cuando corresponde. Caracterización preliminar de micobiota asociada a suelo y vegetación en proyectos que lo requieran.',
     bibliographicAnalysis: 'Identificación taxonómica de macrohongos y evaluación de su rol ecológico (descomponedores, micorrícicos, parásitos). Análisis de diversidad y estacionalidad. Evaluación de pérdida potencial de microhábitats, alteración de simbiosis micorrícica y sensibilidad frente a cambio de uso de suelo.'
   },
   {
     title: 'Quirópteros',
     icon: 'nightlight',
-    image: "url('./flora/misc/misc4.jpg')",
+    image: `url('${withBasePath('/flora/misc/misc4.jpg')}')`,
     fieldMethodology: 'Monitoreo mediante grabaciones bioacústicas ultrasónicas, instalación de redes de niebla en pasos obligados e identificación de refugios en estructuras naturales y antrópicas.',
     bibliographicAnalysis: 'Análisis comparativo de espectrogramas, revisión de periodos reproductivos e hibernación, evaluación de sensibilidad frente a iluminación, ruido y alteración de refugios.'
   }
