@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import fs from 'fs';
 import path from 'path';
+import { withBasePath } from '@/lib/base-path';
 
 export const metadata: Metadata = {
   title: 'Galería | FloraFauna',
@@ -22,11 +23,11 @@ function getImagesFromDir(dirPath: string): string[] {
 }
 
 export default function GalleryPage() {
-  const faunaImages = getImagesFromDir('fauna');
-  const cactusImages = getImagesFromDir('flora/cactus');
-  const florImages = getImagesFromDir('flora/flor');
-  const hongoImages = getImagesFromDir('flora/hongo');
-  const miscImages = getImagesFromDir('flora/misc');
+  const faunaImages = getImagesFromDir(`url('${withBasePath('/fauna')}')`);
+  const cactusImages = getImagesFromDir(`url('${withBasePath('/flora/cactus')}')`);
+  const florImages = getImagesFromDir(`url('${withBasePath('/flora/flor')}')`);
+  const hongoImages = getImagesFromDir(`url('${withBasePath('/flora/hongo')}')`);
+  const miscImages = getImagesFromDir(`url('${withBasePath('/flora/misc')}')`);
 
   const allImages = [...faunaImages, ...cactusImages, ...florImages, ...hongoImages, ...miscImages];
 

@@ -56,20 +56,20 @@ const servicesOverview = [
 ];
 
 const clients = [
-  { name: "Agrisol", logo: "/empresas/Agrisol.jpg" },
-  { name: "Argenta", logo: "/empresas/Argenta.webp" },
-  { name: "Ciudad Luz", logo: "/empresas/CiudadLuz.png" },
-  { name: "Cospac", logo: "/empresas/Cospac.png" },
-  { name: "Espinos", logo: "/empresas/Espinos.svg" },
-  { name: "Iknow", logo: "/empresas/Iknow.png" },
-  { name: "Solari", logo: "/empresas/Solari.png" },
-  { name: "Beltec", logo: "/empresas/Beltec.png" },
-  { name: "Nollagam", logo: "/empresas/Nollagam.png" },
-  { name: "Banco", logo: "/empresas/Banco.webp" },
-  { name: "Atigva", logo: "/empresas/atigva.avif" },
-  { name: "Capital", logo: "/empresas/capital.jpg" },
-  { name: "Potencia", logo: "/empresas/potencia.jpg" },
-  { name: "Nazca", logo: "/empresas/nazca.jpg" },
+  { name: "Agrisol", logo: `url('${withBasePath('/empresas/Agrisol.jpg')}')` },
+  { name: "Argenta", logo: `url('${withBasePath('/empresas/Argenta.webp')}')` },
+  { name: "Ciudad Luz", logo: `url('${withBasePath('/empresas/CiudadLuz.png')}')` },
+  { name: "Cospac", logo: `url('${withBasePath('/empresas/Cospac.png')}')` },
+  { name: "Espinos", logo: `url('${withBasePath('/empresas/Espinos.svg')}')` },
+  { name: "Iknow", logo: `url('${withBasePath('/empresas/Iknow.png')}')` },
+  { name: "Solari", logo: `url('${withBasePath('/empresas/Solari.png')}')` },
+  { name: "Beltec", logo: `url('${withBasePath('/empresas/Beltec.png')}')` },
+  { name: "Nollagam", logo: `url('${withBasePath('/empresas/Nollagam.png')}')` },
+  { name: "Banco", logo: `url('${withBasePath('/empresas/Banco.webp')}')` },
+  { name: "Atigva", logo: `url('${withBasePath('/empresas/atigva.avif')}')` },
+  { name: "Capital", logo: `url('${withBasePath('/empresas/capital.jpg')}')` },
+  { name: "Potencia", logo: `url('${withBasePath('/empresas/potencia.jpg')}')` },
+  { name: "Nazca", logo: `url('${withBasePath('/empresas/nazca.jpg')}')` },
 ];
 
 export default function Home() {
