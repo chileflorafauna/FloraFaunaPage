@@ -56,20 +56,20 @@ const servicesOverview = [
 ];
 
 const clients = [
-  { name: "Agrisol", logo: `url('${withBasePath('/empresas/Agrisol.jpg')}')` },
-  { name: "Argenta", logo: `url('${withBasePath('/empresas/Argenta.webp')}')` },
-  { name: "Ciudad Luz", logo: `url('${withBasePath('/empresas/CiudadLuz.png')}')` },
-  { name: "Cospac", logo: `url('${withBasePath('/empresas/Cospac.png')}')` },
-  { name: "Espinos", logo: `url('${withBasePath('/empresas/Espinos.svg')}')` },
-  { name: "Iknow", logo: `url('${withBasePath('/empresas/Iknow.png')}')` },
-  { name: "Solari", logo: `url('${withBasePath('/empresas/Solari.png')}')` },
-  { name: "Beltec", logo: `url('${withBasePath('/empresas/Beltec.png')}')` },
-  { name: "Nollagam", logo: `url('${withBasePath('/empresas/Nollagam.png')}')` },
-  { name: "Banco", logo: `url('${withBasePath('/empresas/Banco.webp')}')` },
-  { name: "Atigva", logo: `url('${withBasePath('/empresas/atigva.avif')}')` },
-  { name: "Capital", logo: `url('${withBasePath('/empresas/capital.jpg')}')` },
-  { name: "Potencia", logo: `url('${withBasePath('/empresas/potencia.jpg')}')` },
-  { name: "Nazca", logo: `url('${withBasePath('/empresas/nazca.jpg')}')` },
+  { name: "Agrisol", logo: withBasePath('/empresas/Agrisol.jpg') },
+  { name: "Argenta", logo: withBasePath('/empresas/Argenta.webp') },
+  { name: "Ciudad Luz", logo: withBasePath('/empresas/CiudadLuz.png') },
+  { name: "Cospac", logo: withBasePath('/empresas/Cospac.png') },
+  { name: "Espinos", logo: withBasePath('/empresas/Espinos.svg') },
+  { name: "Iknow", logo: withBasePath('/empresas/Iknow.png') },
+  { name: "Solari", logo: withBasePath('/empresas/Solari.png') },
+  { name: "Beltec", logo: withBasePath('/empresas/Beltec.png') },
+  { name: "Nollagam", logo: withBasePath('/empresas/Nollagam.png') },
+  { name: "Banco", logo: withBasePath('/empresas/Banco.webp') },
+  { name: "Atigva", logo: withBasePath('/empresas/atigva.avif') },
+  { name: "Capital", logo: withBasePath('/empresas/capital.jpg') },
+  { name: "Potencia", logo: withBasePath('/empresas/potencia.jpg') },
+  { name: "Nazca", logo: withBasePath('/empresas/nazca.jpg') },
 ];
 
 export default function Home() {

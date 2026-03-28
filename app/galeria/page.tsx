@@ -11,23 +11,24 @@ export const metadata: Metadata = {
 };
 
 function getImagesFromDir(dirPath: string): string[] {
+  const relativeDirPath = dirPath.startsWith('/') ? dirPath.slice(1) : dirPath;
   const publicDir = path.join(process.cwd(), 'public');
-  const fullPath = path.join(publicDir, dirPath);
+  const fullPath = path.join(publicDir, relativeDirPath);
   
   if (!fs.existsSync(fullPath)) return [];
   
   const files = fs.readdirSync(fullPath);
   return files
     .filter(file => /\.(jpg|jpeg|png|webp|svg)$/i.test(file))
-    .map(file => path.join('/', dirPath, file).replace(/\\/g, '/'));
+    .map(file => withBasePath(path.join('/', relativeDirPath, file).replace(/\\/g, '/')));
 }
 
 export default function GalleryPage() {
-  const faunaImages = getImagesFromDir(`url('${withBasePath('/fauna')}')`);
-  const cactusImages = getImagesFromDir(`url('${withBasePath('/flora/cactus')}')`);
-  const florImages = getImagesFromDir(`url('${withBasePath('/flora/flor')}')`);
-  const hongoImages = getImagesFromDir(`url('${withBasePath('/flora/hongo')}')`);
-  const miscImages = getImagesFromDir(`url('${withBasePath('/flora/misc')}')`);
+  const faunaImages = getImagesFromDir('/fauna');
+  const cactusImages = getImagesFromDir('/flora/cactus');
+  const florImages = getImagesFromDir('/flora/flor');
+  const hongoImages = getImagesFromDir('/flora/hongo');
+  const miscImages = getImagesFromDir('/flora/misc');
 
   const allImages = [...faunaImages, ...cactusImages, ...florImages, ...hongoImages, ...miscImages];
 
