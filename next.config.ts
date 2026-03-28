@@ -1,8 +1,17 @@
 import type { NextConfig } from "next";
 
-const isGithubActions = process.env.GITHUB_ACTIONS === "true";
-const repository = process.env.GITHUB_REPOSITORY?.split("/")[1] ?? "";
-const basePath = isGithubActions && repository ? `/${repository}` : "";
+function normalizeBasePath(value?: string): string {
+  if (!value || value === "/") {
+    return "";
+  }
+
+  const withLeadingSlash = value.startsWith("/") ? value : `/${value}`;
+  return withLeadingSlash.endsWith("/") ? withLeadingSlash.slice(0, -1) : withLeadingSlash;
+}
+
+// For custom domains, this should normally be empty.
+// Set NEXT_PUBLIC_BASE_PATH only when deploying under a subpath.
+const basePath = normalizeBasePath(process.env.NEXT_PUBLIC_BASE_PATH);
 
 const nextConfig: NextConfig = {
   output: "export",

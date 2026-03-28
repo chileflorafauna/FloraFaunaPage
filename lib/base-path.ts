@@ -1,6 +1,3 @@
-const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
-const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? '';
-
 function normalizeBasePath(value: string): string {
   if (!value || value === '/') {
     return '';
@@ -11,7 +8,7 @@ function normalizeBasePath(value: string): string {
 }
 
 export const BASE_PATH = normalizeBasePath(
-  process.env.NEXT_PUBLIC_BASE_PATH || (isGithubActions && repositoryName ? `/${repositoryName}` : ''),
+  process.env.NEXT_PUBLIC_BASE_PATH || '',
 );
 
 export function withBasePath(path: string): string {
