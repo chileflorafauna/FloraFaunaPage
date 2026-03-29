@@ -50,6 +50,16 @@ jobs:
             fi
           fi
 
+      - name: Add compatibility alias for legacy repo-path URLs
+        shell: bash
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+
+          if [ -z "${NEXT_PUBLIC_BASE_PATH}" ]; then
+            mkdir -p "out/${REPO_NAME}"
+            rsync -a --delete --exclude "${REPO_NAME}" out/ "out/${REPO_NAME}/"
+          fi
+
       - name: Add nojekyll file
         run: touch out/.nojekyll
 
