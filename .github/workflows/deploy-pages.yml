@@ -37,6 +37,19 @@ jobs:
       - name: Build static site
         run: npm run build
 
+      - name: Verify root-path export
+        shell: bash
+        run: |
+          REPO_NAME="${GITHUB_REPOSITORY#*/}"
+
+          if [ -z "${NEXT_PUBLIC_BASE_PATH}" ]; then
+            if grep -R "/${REPO_NAME}/" out -n --include="*.html"; then
+              echo "Found '/${REPO_NAME}/' in exported HTML while NEXT_PUBLIC_BASE_PATH is empty."
+              echo "This would break assets/routes on a custom domain."
+              exit 1
+            fi
+          fi
+
       - name: Add nojekyll file
         run: touch out/.nojekyll
 
