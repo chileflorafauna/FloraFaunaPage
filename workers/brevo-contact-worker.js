@@ -49,6 +49,7 @@ async function sendWithBrevo(env, payload) {
   const senderName = sanitize(env.BREVO_SENDER_NAME) || 'FloraFauna';
   const toEmail = sanitize(env.BREVO_TO_EMAIL);
   const toName = sanitize(env.BREVO_TO_NAME);
+  const ccEmail = sanitize(env.BREVO_CC_EMAIL);
 
   if (!apiKey || !senderEmail || !toEmail) {
     throw new Error('Missing Brevo config');
@@ -71,6 +72,15 @@ async function sendWithBrevo(env, payload) {
           ...(toName ? { name: toName } : {}),
         },
       ],
+      ...(ccEmail
+        ? {
+            cc: [
+              {
+                email: ccEmail,
+              },
+            ],
+          }
+        : {}),
       replyTo: {
         email: payload.email,
         name: payload.fullName,
