@@ -18,8 +18,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_CONTACT_ENDPOINT: ${{ vars.NEXT_PUBLIC_CONTACT_ENDPOINT }}
-      NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL }}
+      NEXT_PUBLIC_CONTACT_ENDPOINT: ${{ vars.NEXT_PUBLIC_CONTACT_ENDPOINT || secrets.NEXT_PUBLIC_CONTACT_ENDPOINT }}
+      NEXT_PUBLIC_SITE_URL: ${{ vars.NEXT_PUBLIC_SITE_URL || secrets.NEXT_PUBLIC_SITE_URL }}
       NEXT_PUBLIC_BASE_PATH: ""
     steps:
       - name: Checkout
@@ -33,6 +33,21 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      - name: Validate contact endpoint for static deploy
+        shell: bash
+        run: |
+          if [ -z "${NEXT_PUBLIC_CONTACT_ENDPOINT}" ]; then
+            echo "NEXT_PUBLIC_CONTACT_ENDPOINT is missing."
+            echo "For GitHub Pages static deploy, configure it as Repository Variable or Secret."
+            exit 1
+          fi
+
+          if [[ "${NEXT_PUBLIC_CONTACT_ENDPOINT}" != https://* ]]; then
+            echo "NEXT_PUBLIC_CONTACT_ENDPOINT must be an absolute https URL to your Worker."
+            echo "Current value: ${NEXT_PUBLIC_CONTACT_ENDPOINT}"
+            exit 1
+          fi
 
       - name: Build static site
         run: npm run build
